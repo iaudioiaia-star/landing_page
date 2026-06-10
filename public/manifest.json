@@ -1,0 +1,9 @@
+{
+  "name": "Iaudio",
+  "short_name": "Iaudio",
+  "theme_color": "#22c55e",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": []
+}

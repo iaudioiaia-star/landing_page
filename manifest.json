@@ -1,0 +1,22 @@
+{
+  "name": "Iaudio Chat",
+  "short_name": "Iaudio",
+  "theme_color": "#22c55e",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/chat/",
+  "start_url": "/chat/",
+  "icons": [
+    {
+      "src": "https://api.wavechat.com.br/public/webchat-config/9/1768511334900_ChatGPT_Image_13_de_jan._de_2026__13_25_34.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://api.wavechat.com.br/public/webchat-config/9/1768511334900_ChatGPT_Image_13_de_jan._de_2026__13_25_34.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
