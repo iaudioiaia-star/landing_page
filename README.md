@@ -1,73 +1,110 @@
-# Welcome to your Lovable project
+# Landing Page — iaudio
 
-## Project info
+Site de marketing da **iaudio**, serviço de produção musical personalizada via chat.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## O que o projeto faz
 
-There are several ways of editing your application.
+- Apresenta o serviço com seções de hero, vídeo, depoimentos e estatísticas
+- Direciona o usuário para uma página de chat (`/chat`) onde ele faz o pedido da música
+- O chat é carregado via widget externo do **Wavechat** (`api.wavechat.com.br`)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Tecnologias
 
-Changes made via Lovable will be committed automatically to this repo.
+| Camada | Tecnologia |
+|---|---|
+| Framework | React 18 + TypeScript |
+| Build | Vite |
+| Estilo | Tailwind CSS |
+| Componentes | shadcn/ui + Radix UI |
+| Roteamento | React Router DOM |
+| Deploy | Vercel |
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Estrutura de pastas
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```
+src/
+├── components/        # Seções da landing page (Hero, Footer, etc.)
+│   └── ui/            # Componentes genéricos do shadcn/ui (botões, cards...)
+├── pages/
+│   ├── Index.tsx      # Página principal — monta todas as seções
+│   ├── Chat.tsx       # Página do chat — carrega o widget Wavechat
+│   └── NotFound.tsx   # Página 404
+├── hooks/             # Hooks reutilizáveis (toast, detecção mobile)
+├── lib/               # Utilitários (cn, logger)
+├── App.tsx            # Configura rotas e providers globais
+└── main.tsx           # Ponto de entrada do React
+```
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Como rodar localmente
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+**Pré-requisitos:** Node.js 18+ instalado
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+# 1. Instalar dependências
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 2. Iniciar servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O site abre em `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Comandos disponíveis
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run dev        # Servidor de desenvolvimento com hot reload
+npm run build      # Gera build de produção na pasta /dist
+npm run preview    # Visualiza o build de produção localmente
+npm run lint       # Verifica erros de código com ESLint
+npm run test       # Roda os testes com Vitest
+```
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Rotas
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| Rota | Página |
+|---|---|
+| `/` | Landing page (todas as seções) |
+| `/chat` | Chat com o widget Wavechat |
+| `*` | Página 404 |
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Deploy
 
-## Can I connect a custom domain to my Lovable project?
+O projeto está configurado para o **Vercel**. O arquivo `vercel.json` garante que todas as rotas redirecionem para o `index.html` (necessário para SPA com React Router).
 
-Yes, you can!
+Para fazer deploy: suba o repositório no Vercel e aponte para a branch `main`. O Vercel detecta o Vite automaticamente.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Adicionando novas seções à landing page
+
+1. Crie o componente em `src/components/NomeDaSecao.tsx`
+2. Importe e adicione em `src/pages/Index.tsx`
+
+Exemplo:
+```tsx
+// src/pages/Index.tsx
+import NomeDaSecao from "@/components/NomeDaSecao";
+
+const Index = () => (
+  <div className="min-h-screen bg-background">
+    <Header />
+    <Hero />
+    <NomeDaSecao />  {/* <- adicione aqui */}
+    <Footer />
+  </div>
+);
+```

@@ -16,6 +16,7 @@ const Chat = () => {
     const WEBCHAT_API = "https://api.wavechat.com.br";
     const SCRIPT_ID = "wavechat-widget-script";
 
+    // Impede zoom automático no iOS quando o teclado abre dentro do widget
     const viewportContent = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover";
 
     let metaViewport = document.querySelector('meta[name="viewport"]');
