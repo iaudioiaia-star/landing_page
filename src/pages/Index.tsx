@@ -1,10 +1,12 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import VideoSection from "@/components/VideoSection";
-import HowItWorks from "@/components/HowItWorks";
-import Testimonials from "@/components/Testimonials";
-import StatsCounter from "@/components/StatsCounter";
-import Footer from "@/components/Footer";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/sections/Hero";
+import VideoSection from "@/components/sections/VideoSection";
+import HowItWorks from "@/components/sections/HowItWorks";
+import Testimonials from "@/components/sections/Testimonials";
+import StatsCounter from "@/components/sections/StatsCounter";
+import FAQ from "@/components/sections/FAQ";
+import FinalCTA from "@/components/sections/FinalCTA";
 
 const Index = () => {
   return (
@@ -15,6 +17,8 @@ const Index = () => {
       <HowItWorks />
       <Testimonials />
       <StatsCounter />
+      <FAQ />
+      <FinalCTA />
       <Footer />
     </div>
   );

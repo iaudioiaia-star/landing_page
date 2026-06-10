@@ -1,4 +1,4 @@
-import SoundWave from "./SoundWave";
+import SoundWave from "../common/SoundWave";
 
 const Footer = () => {
   return (
@@ -12,12 +12,12 @@ const Footer = () => {
               iaudio
             </span>
           </div>
-          
+
           {/* Tagline */}
           <p className="text-sm text-muted-foreground text-center">
             Transformando sonhos em música desde 2024
           </p>
-          
+
           {/* Legal */}
           <p className="text-xs text-muted-foreground">
             © 2024 iaudio. Todos os direitos reservados.

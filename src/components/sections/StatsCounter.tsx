@@ -37,15 +37,14 @@ const useCountUp = (end: number, duration: number = 2500, startCounting: boolean
 
   useEffect(() => {
     if (!startCounting) return;
-    
+
     let startTime: number;
     let animationFrame: number;
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      
-      // Easing function for smooth animation
+
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(easeOutQuart * end));
 
@@ -62,20 +61,20 @@ const useCountUp = (end: number, duration: number = 2500, startCounting: boolean
   return count;
 };
 
-const StatItem = ({ 
-  icon: Icon, 
-  value, 
-  prefix, 
-  suffix, 
-  label, 
+const StatItem = ({
+  icon: Icon,
+  value,
+  prefix,
+  suffix,
+  label,
   startCounting,
   delay,
   index
-}: { 
-  icon: typeof Music; 
-  value: number; 
-  prefix: string; 
-  suffix: string; 
+}: {
+  icon: typeof Music;
+  value: number;
+  prefix: string;
+  suffix: string;
   label: string;
   startCounting: boolean;
   delay: number;
@@ -96,9 +95,9 @@ const StatItem = ({
   }, [startCounting, delay]);
 
   return (
-    <div 
+    <div
       className={`
-        relative flex flex-col items-center gap-4 p-8 rounded-3xl 
+        relative flex flex-col items-center gap-4 p-8 rounded-3xl
         bg-gradient-to-br from-card/80 via-card/60 to-secondary/40
         backdrop-blur-xl border border-primary/20
         shadow-[0_8px_32px_rgba(212,175,55,0.15),inset_0_1px_0_rgba(255,255,255,0.1)]
@@ -109,18 +108,15 @@ const StatItem = ({
       `}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      {/* Glow effect */}
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
-      
-      {/* Icon container with pulse animation */}
+
       <div className="relative">
         <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse" />
         <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center border border-primary/30 shadow-lg">
           <Icon className="w-8 h-8 text-primary drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
         </div>
       </div>
-      
-      {/* Value with gradient text */}
+
       <div className="text-center relative z-10">
         <p className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-yellow-400 to-primary bg-clip-text text-transparent drop-shadow-lg">
           {prefix}{count.toLocaleString('pt-BR')}{suffix}
@@ -137,6 +133,7 @@ const StatsCounter = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
+  // Só dispara a animação quando a seção entra na viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -159,14 +156,12 @@ const StatsCounter = () => {
     <section ref={sectionRef} className="py-20 px-4 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
-      
-      {/* Animated floating orbs */}
+
       <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-glow" />
-      
+
       <div className="container mx-auto max-w-6xl relative z-10">
-        {/* Section header */}
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
@@ -179,8 +174,7 @@ const StatsCounter = () => {
             Milhares de pessoas já transformaram seus momentos especiais em músicas únicas
           </p>
         </div>
-        
-        {/* Stats grid */}
+
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <StatItem

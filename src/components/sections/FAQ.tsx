@@ -51,13 +51,13 @@ const FAQ = () => {
               Respondemos com carinho, sem termos complicados
             </p>
           </div>
-          
+
           {/* FAQ Accordion */}
           <div className="card-elegant">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+                <AccordionItem
+                  key={index}
                   value={`item-${index}`}
                   className="border-border/50"
                 >
@@ -71,7 +71,7 @@ const FAQ = () => {
               ))}
             </Accordion>
           </div>
-          
+
           {/* Security note */}
           <div className="mt-8 flex items-center justify-center gap-3 text-sm text-muted-foreground">
             <Shield className="w-5 h-5 text-primary" />

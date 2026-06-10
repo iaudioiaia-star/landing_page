@@ -35,7 +35,7 @@ const HowItWorks = () => {
               Três passos simples. Sem complicação, sem termos difíceis.
             </p>
           </div>
-          
+
           {/* Steps */}
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
@@ -45,12 +45,12 @@ const HowItWorks = () => {
                   <span className="text-6xl font-display font-bold text-primary/10 absolute top-4 right-4">
                     {step.number}
                   </span>
-                  
+
                   {/* Icon */}
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                     <step.icon className="w-7 h-7 text-primary" />
                   </div>
-                  
+
                   {/* Content */}
                   <h3 className="font-display text-xl font-semibold mb-3">
                     {step.title}
@@ -59,7 +59,7 @@ const HowItWorks = () => {
                     {step.description}
                   </p>
                 </div>
-                
+
                 {/* Arrow connector */}
                 {index < steps.length - 1 && (
                   <div className="hidden md:flex absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">

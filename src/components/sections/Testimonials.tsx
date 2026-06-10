@@ -35,16 +35,16 @@ const Testimonials = () => {
               Histórias reais de pessoas como você
             </p>
           </div>
-          
+
           {/* Testimonial video cards */}
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="card-elegant relative hover:border-primary/30 transition-all duration-300"
               >
                 {/* Video frame vertical 9:16 */}
-                <div 
+                <div
                   className="video-frame relative w-full mb-4 overflow-hidden"
                   style={{ aspectRatio: '9/16' }}
                 >
@@ -63,14 +63,14 @@ const Testimonials = () => {
                     </div>
                   )}
                 </div>
-                
-                {/* Rating - mantém estrelas amarelas */}
+
+                {/* Rating */}
                 <div className="flex gap-1 mb-3">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star key={i} className="w-4 h-4" style={{ fill: 'hsl(42 85% 55%)', color: 'hsl(42 85% 55%)' }} />
                   ))}
                 </div>
-                
+
                 {/* Author */}
                 <div>
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
@@ -81,7 +81,7 @@ const Testimonials = () => {
               </div>
             ))}
           </div>
-          
+
           {/* Trust badge */}
           <div className="mt-12 text-center">
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-secondary/50 border border-border/50">

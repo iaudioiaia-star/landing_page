@@ -1,4 +1,4 @@
-import SoundWave from "./SoundWave";
+import SoundWave from "../common/SoundWave";
 
 const Header = () => {
   return (
