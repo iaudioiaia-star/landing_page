@@ -6,7 +6,7 @@ import FloatingParticles from "../common/FloatingParticles";
 
 const Hero = () => {
   return (
-    <section className="relative flex items-center justify-center pt-28 pb-16 overflow-hidden">
+    <section className="relative flex items-center justify-center pt-24 pb-16 overflow-hidden">
       {/* Base gradient */}
       <div className="absolute inset-0 bg-gradient-dark" />
 

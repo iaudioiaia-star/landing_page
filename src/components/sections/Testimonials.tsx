@@ -151,21 +151,33 @@ const Testimonials = () => {
                       ))}
                     </div>
 
-                    {/* Mini equalizer bars */}
-                    <div className="flex items-end gap-[3px]" style={{ height: 20 }}>
-                      {[0.4, 0.9, 0.6, 1, 0.7, 0.5, 0.85, 0.45].map((h, i) => (
-                        <div
-                          key={i}
-                          className="w-[3px] rounded-full animate-sound-wave"
-                          style={{
-                            height: `${h * 100}%`,
-                            background: "linear-gradient(to top, #549733, #6FBB49)",
-                            animationDelay: `${i * 0.12}s`,
-                            animationDuration: `${0.9 + i * 0.1}s`,
-                            boxShadow: "0 0 4px rgba(111,187,73,0.5)",
-                          }}
-                        />
-                      ))}
+                    {/* Neon equalizer */}
+                    <div className="flex flex-col items-center gap-[3px]">
+                      <div className="flex items-end gap-[4px]" style={{ height: 36 }}>
+                        {[0.3, 0.75, 0.5, 1, 0.62, 0.9, 0.45, 0.82, 0.55, 0.35].map((h, i) => (
+                          <div
+                            key={i}
+                            className="rounded-full animate-sound-wave"
+                            style={{
+                              width: 4,
+                              height: `${h * 100}%`,
+                              background: h >= 0.85
+                                ? "linear-gradient(to top, #549733, #CEECB6)"
+                                : "linear-gradient(to top, #31531E, #6FBB49)",
+                              animationDelay: `${i * 0.1}s`,
+                              animationDuration: `${0.75 + i * 0.09}s`,
+                              boxShadow: h >= 0.85
+                                ? "0 0 8px rgba(206,236,182,0.9), 0 0 18px rgba(111,187,73,0.55)"
+                                : "0 0 5px rgba(111,187,73,0.55)",
+                            }}
+                          />
+                        ))}
+                      </div>
+                      {/* Glow reflection line */}
+                      <div
+                        className="rounded-full blur-sm"
+                        style={{ width: 52, height: 3, background: "rgba(111,187,73,0.45)", marginTop: -4 }}
+                      />
                     </div>
                   </div>
 

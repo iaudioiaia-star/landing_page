@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "E se eu não gostar da música?",
-    answer: "A gente trabalha junto até você ficar feliz. Fazemos ajustes sem custo extra. Seu sonho é importante pra gente."
+    answer: "A gente trabalha junto até você ficar feliz. Oferecemos uma correção sem custo extra."
   },
   {
     question: "É seguro usar o chat de vocês?",

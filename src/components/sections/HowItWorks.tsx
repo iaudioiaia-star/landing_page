@@ -71,13 +71,22 @@ const HowItWorks = () => {
                     <p className="text-muted-foreground leading-relaxed">{step.description}</p>
                   </SpotlightCard>
 
-                  {/* Arrow connector */}
+                  {/* Arrow connector – centred in the grid gap */}
                   {index < steps.length - 1 && (
-                    <div className="hidden md:flex absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                      <ArrowRight
-                        className="w-8 h-8 animate-circuit-pulse"
-                        style={{ color: "rgba(111,187,73,0.45)" }}
-                      />
+                    <div
+                      className="hidden md:flex items-center justify-center absolute top-1/2 left-full -translate-y-1/2 z-10"
+                      style={{ width: 32 }}
+                    >
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center animate-circuit-pulse"
+                        style={{
+                          background: "rgba(34,59,22,0.8)",
+                          border: "1px solid rgba(111,187,73,0.5)",
+                          boxShadow: "0 0 12px rgba(111,187,73,0.35)",
+                        }}
+                      >
+                        <ArrowRight className="w-3.5 h-3.5" style={{ color: "#6FBB49" }} />
+                      </div>
                     </div>
                   )}
                 </div>

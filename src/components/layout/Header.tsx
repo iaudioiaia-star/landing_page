@@ -18,8 +18,8 @@ const Header = () => {
         borderColor: scrolled ? "rgba(111,187,73,0.30)" : "rgba(66,108,42,0.35)",
         boxShadow: scrolled ? "0 4px 32px rgba(0,0,0,0.5), 0 1px 0 rgba(111,187,73,0.08)" : "none",
         transition: "background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease",
-        paddingTop:    scrolled ? "8px"  : "12px",
-        paddingBottom: scrolled ? "8px"  : "12px",
+        paddingTop:    scrolled ? "5px" : "8px",
+        paddingBottom: scrolled ? "5px" : "8px",
       }}
     >
       <div className="container mx-auto px-6">
@@ -30,19 +30,20 @@ const Header = () => {
               alt="Iaudio logo"
               className="header-logo"
               style={{
-                transition: "width 0.35s ease",
-                width: scrolled ? "64px" : "80px",
+                transition: "height 0.35s ease",
+                height: scrolled ? "34px" : "42px",
+                width: "auto",
               }}
             />
             <span
-              className="font-display text-2xl font-bold tracking-wide"
+              className="font-display font-bold tracking-wide"
               style={{
                 background: "linear-gradient(135deg, #6FBB49, #94CC74, #CEECB6)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
                 transition: "font-size 0.35s ease",
-                fontSize: scrolled ? "1.25rem" : "1.5rem",
+                fontSize: scrolled ? "1.1rem" : "1.25rem",
               }}
             >
               iaudio
@@ -53,11 +54,11 @@ const Header = () => {
             to="/chat"
             className="btn-primary"
             style={{
-              fontSize:      scrolled ? "0.8rem"  : "0.875rem",
-              paddingTop:    scrolled ? "6px"     : "10px",
-              paddingBottom: scrolled ? "6px"     : "10px",
-              paddingLeft:   scrolled ? "16px"    : "24px",
-              paddingRight:  scrolled ? "16px"    : "24px",
+              fontSize:      scrolled ? "0.78rem" : "0.85rem",
+              paddingTop:    scrolled ? "5px"     : "8px",
+              paddingBottom: scrolled ? "5px"     : "8px",
+              paddingLeft:   scrolled ? "14px"    : "20px",
+              paddingRight:  scrolled ? "14px"    : "20px",
               transition: "all 0.35s ease",
             }}
           >
