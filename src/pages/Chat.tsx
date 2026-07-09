@@ -13,7 +13,7 @@ const Chat = () => {
 
   useEffect(() => {
     const WEBCHAT_ID = "91521bfb-f796-480a-82cb-5d94ff6239e2";
-    const WEBCHAT_API = "https://api.wavechat.com.br";
+    const WEBCHAT_API = "https://widget.troiachat.com/chat/6a3ed185a898fd92c029fc94";
     const SCRIPT_ID = "wavechat-widget-script";
 
     // Impede zoom automático no iOS quando o teclado abre dentro do widget
@@ -78,7 +78,7 @@ const Chat = () => {
     if (!script) {
       script = document.createElement("script");
       script.id = SCRIPT_ID;
-      script.src = "https://api.wavechat.com.br/public/webchat/widget.js";
+      script.src = "";
       script.setAttribute("data-webchat-id", WEBCHAT_ID);
       script.setAttribute("data-api", WEBCHAT_API);
       script.async = true;

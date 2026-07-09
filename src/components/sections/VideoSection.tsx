@@ -1,11 +1,13 @@
 import { Play, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import SoundWave from "../common/SoundWave";
+import RevealSection from "../common/RevealSection";
 
 const VideoSection = () => {
   return (
     <section id="video" className="pt-8 pb-16 relative">
       <div className="container mx-auto px-6">
+        <RevealSection>
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-10">
@@ -52,6 +54,7 @@ const VideoSection = () => {
             </p>
           </div>
         </div>
+        </RevealSection>
       </div>
     </section>
   );

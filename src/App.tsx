@@ -6,12 +6,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
+import ScrollProgress from "./components/common/ScrollProgress";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <ScrollProgress />
       <Toaster />
       <Sonner />
       <BrowserRouter>

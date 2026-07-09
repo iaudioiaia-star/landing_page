@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -14,7 +15,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
+        display: ['Sora', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       colors: {
@@ -51,12 +52,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--primary))",
-          glow: "hsl(var(--gold-glow))",
+        circuit: {
+          black:   "#020403",
+          dark:    "#223B16",
+          moss:    "#31531E",
+          mid:     "#426C2A",
+          main:    "#549733",
+          bright:  "#6FBB49",
+          premium: "#94CC74",
+          glow:    "#CEECB6",
         },
-        cream: "hsl(var(--warm-cream))",
-        navy: "hsl(var(--deep-navy))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -99,5 +104,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;
