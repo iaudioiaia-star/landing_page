@@ -29,8 +29,8 @@ const faqs = [
     answer: "Normalmente sua música fica pronta em algumas horas. A gente avisa você pelo próprio chat quando estiver prontinha."
   },
   {
-    question: "Posso fazer música de qualquer tipo?",
-    answer: "Pode sim! Romântica, sertaneja, gospel, MPB, pop... Você escolhe o estilo e a gente cria do seu jeito."
+    question: "Posso produzir em qualquer estilo musical?",
+    answer: "Sim, produzimos em qualquer estilo musical do mundo."
   }
 ];
 

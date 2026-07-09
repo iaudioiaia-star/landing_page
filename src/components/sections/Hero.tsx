@@ -52,7 +52,7 @@ const Hero = () => {
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up animation-delay-200">
             Aqui, você não precisa esperar um dia ou mais para receber sua música.{" "}
             <span className="text-foreground">Você conversa, envia sua letra e ritmo</span>{" "}
-            e em poucos minutos recebe sua música pronta através de um canal exclusivo.
+            e em algumas horas recebe sua música pronta através de um canal exclusivo.
           </p>
 
           {/* Trust indicators */}
