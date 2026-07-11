@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { openTroiaChat } from "../common/TroiaChatWidget";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -50,8 +51,8 @@ const Header = () => {
             </span>
           </Link>
 
-          <Link
-            to="/chat"
+          <button
+            onClick={openTroiaChat}
             className="btn-primary"
             style={{
               fontSize:      scrolled ? "0.78rem" : "0.85rem",
@@ -63,7 +64,7 @@ const Header = () => {
             }}
           >
             Começar Agora
-          </Link>
+          </button>
         </div>
       </div>
     </header>

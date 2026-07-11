@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import ScrollProgress from "./components/common/ScrollProgress";
+import TroiaChatWidget from "./components/common/TroiaChatWidget";
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <ScrollProgress />
+      <TroiaChatWidget />
       <Toaster />
       <Sonner />
       <BrowserRouter>

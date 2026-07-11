@@ -1,6 +1,6 @@
-import { MessageCircle, Heart, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
+import { MessageCircle, Zap } from "lucide-react";
 import RevealSection from "../common/RevealSection";
+import { openTroiaChat } from "../common/TroiaChatWidget";
 
 const FinalCTA = () => {
   return (
@@ -40,10 +40,10 @@ const FinalCTA = () => {
           </p>
 
           <div className="flex flex-col items-center gap-6">
-            <Link to="/chat" className="btn-whatsapp text-lg py-5 px-12 group">
+            <button onClick={openTroiaChat} className="btn-whatsapp text-lg py-5 px-12 group">
               <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
               Falar com a iaudio
-            </Link>
+            </button>
 
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Zap className="w-4 h-4 text-primary" />

@@ -1,5 +1,6 @@
 import { Music, Sparkles, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { openTroiaChat } from "../common/TroiaChatWidget";
 import SoundWave from "../common/SoundWave";
 import CircuitBackground from "../common/CircuitBackground";
 import FloatingParticles from "../common/FloatingParticles";
@@ -70,13 +71,13 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
-            <Link
-              to="/chat"
+            <button
+              onClick={openTroiaChat}
               className="btn-whatsapp btn-pulse relative"
             >
               <Music className="w-5 h-5" />
               Quero Minha Música
-            </Link>
+            </button>
             <a href="#video" className="btn-secondary">
               Ver Como Funciona
             </a>
