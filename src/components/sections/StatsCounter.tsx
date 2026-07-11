@@ -46,7 +46,7 @@ const StatItem = ({
 
   return (
     <div
-      className={`relative flex flex-col items-center gap-4 p-8 rounded-3xl
+      className={`relative flex flex-col items-center gap-3 md:gap-4 p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl
         backdrop-blur-xl transition-all duration-500 ease-out hover:scale-105
         ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       style={{
@@ -57,25 +57,30 @@ const StatItem = ({
       }}
     >
       <div className="relative">
-        <div className="absolute inset-0 rounded-full blur-xl animate-pulse"
-          style={{ background: "rgba(84,151,51,0.25)" }} />
-        <div className="relative w-16 h-16 rounded-full flex items-center justify-center border shadow-lg"
+        <div className="absolute inset-0 rounded-full blur-lg animate-pulse"
+          style={{ background: "rgba(84,151,51,0.22)" }} />
+        <div className="relative w-11 h-11 md:w-14 md:h-14 rounded-full flex items-center justify-center border shadow-lg"
           style={{
             background: "linear-gradient(135deg, rgba(84,151,51,0.30), rgba(66,108,42,0.15))",
             borderColor: "rgba(111,187,73,0.35)",
           }}
         >
-          <Icon className="w-8 h-8"
-            style={{ color: "#6FBB49", filter: "drop-shadow(0 0 6px rgba(111,187,73,0.6))" }} />
+          <Icon className="w-5 h-5 md:w-7 md:h-7"
+            style={{ color: "#6FBB49", filter: "drop-shadow(0 0 5px rgba(111,187,73,0.6))" }} />
         </div>
       </div>
 
       <div className="text-center relative z-10">
-        <p className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent"
-          style={{ backgroundImage: "linear-gradient(135deg, #6FBB49, #94CC74, #CEECB6)" }}>
+        <p
+          className="font-bold bg-clip-text text-transparent leading-none"
+          style={{
+            backgroundImage: "linear-gradient(135deg, #6FBB49, #94CC74, #CEECB6)",
+            fontSize: "clamp(1.4rem, 5.5vw, 3rem)",
+          }}
+        >
           {prefix}{count.toLocaleString("pt-BR")}{suffix}
         </p>
-        <p className="text-sm md:text-base mt-2 font-medium tracking-wide uppercase"
+        <p className="text-xs md:text-sm mt-1.5 font-medium tracking-wide uppercase"
           style={{ color: "#94CC74" }}>
           {label}
         </p>
@@ -107,7 +112,7 @@ const StatsCounter = () => {
         style={{ background: "rgba(66,108,42,0.06)", animationDelay: "1s" }} />
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className={`text-center mb-16 transition-all duration-700
+        <div className={`text-center mb-10 md:mb-16 transition-all duration-700
           ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{ background: "rgba(84,151,51,0.12)", border: "1px solid rgba(111,187,73,0.25)" }}>
@@ -123,7 +128,7 @@ const StatsCounter = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <StatItem key={stat.label} {...stat} startCounting={isVisible} delay={index * 200} index={index} />
           ))}
